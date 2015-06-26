@@ -1,0 +1,2 @@
+name,url,searchUrl,resultListingClass,resultUrl,absoluteUrl,pageTitle,pageBody
+Reuters,http://reuters.com,http://www.reuters.com/search/news?blob=,div.search-result-content,h3.search-result-title a,true,h1,span#articleText
