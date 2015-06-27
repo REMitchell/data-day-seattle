@@ -1,8 +1,9 @@
+use articleCrawler;
 -- MySQL dump 10.13  Distrib 5.6.20, for osx10.9 (x86_64)
 --
--- Host: localhost    Database: press
+-- Host: localhost    Database: articleCrawler
 -- ------------------------------------------------------
--- Server version	5.6.20
+-- Server version 5.6.20
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -25,20 +26,10 @@ DROP TABLE IF EXISTS `topics`;
 CREATE TABLE `topics` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
-  `description` varchar(10000) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `topics`
---
-
-LOCK TABLES `topics` WRITE;
-/*!40000 ALTER TABLE `topics` DISABLE KEYS */;
-INSERT INTO `topics` (id, name) VALUES (1,'hubspot'),(2,'microsoft'),(3,'apple'),(4,'virgin'),(5,'virgin air'),(6,'Google'),(7,'Renttherunway'),(8,'zulily'),(9,'samsung');
-/*!40000 ALTER TABLE `topics` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `content`
