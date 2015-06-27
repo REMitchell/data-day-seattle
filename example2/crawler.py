@@ -2,6 +2,11 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import re
 
+##################
+# This crawler gets the most recent "Business and Finance" articles
+# from the Brookings Institute, and prints out their title and lede
+# (or the first paragraph)
+#################
 def getArticle(url):
 	print("URL: "+url)
 	html = urlopen(url)
@@ -21,7 +26,7 @@ def getArticle(url):
 
 for i in range(0, 10):
 	start = str(i*25+1)
-	print(start)
+	print("Scraping page: "+str(start)+" of articles")
 	url = "http://www.brookings.edu/research/commentary?topic=Business%20and%20Finance&start="+start+"&sort=ContentDate"
 	html = urlopen(url)
 	listingObj = BeautifulSoup(html.read())
