@@ -31,7 +31,7 @@ class Scraper:
 		#conn = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd=None, db='mysql' charset='utf8')
 
 		#cur = conn.cursor(pymysql.cursors.DictCursor)
-		#cur.execute("USE press")
+		#cur.execute("USE articleCrawler")
 
 	#########
 	# Close a MySQL connection. Should be triggered by the caller after running
@@ -94,7 +94,7 @@ class Scraper:
 
 		#If not using MySQL, return a dummy topic object. This line should be commented
 		#out if you are using MySQL
-		topic = Topic(0, topicName, "")
+		topic = Topic(0, topicName)
 		return topic
 
 	################
@@ -183,9 +183,9 @@ for row in siteRows:
 
 while(topicName):
 	print("GETTING INFO ABOUT: "+topicName);
-	topicName = f.readline().strip()
 	for targetSite in sites:
 		scraper.scrape(topicName, targetSite)
+	topicName = f.readline().strip()
 
 scraper.closeCon()
 
